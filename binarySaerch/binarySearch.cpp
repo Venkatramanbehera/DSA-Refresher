@@ -30,6 +30,6 @@ int main() {
     int n = 7;
     int target = 12;
     cout << binarySearch(arr, n, target) << endl;
-    // cout << binary_search(arr, n + 7, target) << endl;
+    cout << binary_search(arr, arr + 7, target) << endl;
     return 0;
 }
