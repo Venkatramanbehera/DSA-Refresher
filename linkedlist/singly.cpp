@@ -29,7 +29,7 @@ void insertAtHead(Node*& head, int data) {
 }
 
 void insertAtTail(Node*& tail, int data) {
-    Node* temp = tail;
+    Node* temp = new Node(data);
     tail->next = temp;
     tail = temp;
 }
