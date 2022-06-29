@@ -3,6 +3,7 @@
     "iostream": "cpp",
     "ostream": "cpp",
     "__locale": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "valarray": "cpp"
   },
 }
