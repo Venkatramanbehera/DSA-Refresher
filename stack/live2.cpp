@@ -4,7 +4,7 @@ using namespace std;
 
 // Q1 - sort the stack
 
-void sortInsert(stack<int> st, int data) {
+void sortInsert(stack<int>& st, int data) {
     // BC
     if (st.empty() || st.top() < data) {
         st.push(data);
@@ -18,7 +18,7 @@ void sortInsert(stack<int> st, int data) {
     st.push(topEle);
 }
 
-void sortStack(stack<int> st) {
+void sortStack(stack<int>& st) {
     if (st.empty()) {
         return;
     }
