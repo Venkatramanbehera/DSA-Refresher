@@ -4,6 +4,7 @@
     "ostream": "cpp",
     "__locale": "cpp",
     "random": "cpp",
-    "valarray": "cpp"
-  },
+    "valarray": "cpp",
+    "unordered_map": "cpp"
+  }
 }
