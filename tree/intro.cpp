@@ -35,7 +35,7 @@ Node* buildTree() {
 
 void preOrder(Node*& root)
 {
-    // N
+    // N L R
     if (root == NULL) {
         return;
     }
@@ -73,10 +73,12 @@ void postOrder(Node*& root)
 int main() {
     Node* root = NULL;
     root = buildTree();
+    cout << endl;
+    cout << " PreOrder " << endl;
     preOrder(root);
-    cout << endl;
+    cout << " Iorder " << endl;
     inOrder(root);
-    cout << endl;
+    cout << " PostOrder " << endl;
     postOrder(root);
     return 0;
 }
