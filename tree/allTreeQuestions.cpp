@@ -214,6 +214,22 @@ bool hasPathSum(TreeNode* root, int s) {
     return leftCheck || rightCheck;
 }
 
+TreeNode* LCA(TreeNode* root, int n1, int n2) {
+    if (root == NULL)
+        return NULL;
+    if (root->data == n1 || root->data == n2)
+        return root;
+    TreeNode* leftTree = LCA(root->left, n1, n2);
+    TreeNode* rightTree = LCA(root->right, n1, n2);
+
+    if (leftTree != NULL && rightTree != NULL)
+        return root;
+    if (leftTree != NULL && rightTree == NULL)
+        return leftTree;
+    else
+        return rightTree;
+}
+
 int main() {
     TreeNode* root = buildTree();
     // preOrderTraversal(root);
@@ -234,6 +250,8 @@ int main() {
     cout << " Is Balanced " << isBalance(root) << endl;
     cout << " Is Symmetric " << isSymmetric(root) << endl;
     cout << " Is Path sum leaf " << hasPathSum(root, 5) << endl;
+    TreeNode* res = LCA(root, 7, 5);
+    cout << res->data << endl;
     return 0;
 }
 // 1 2 7 -1 -1 5 -1 -1 3 -1 -1
