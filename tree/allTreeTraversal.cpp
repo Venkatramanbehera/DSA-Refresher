@@ -217,18 +217,33 @@ vector<int> rightViewTraversal(TreeNode* root) {
     return result;
 }
 
-// // Q - Diagonal Traversal
-// vector<int> diagonal(TreeNode* root) {
-
-// }
+// Q - Diagonal Traversal
+void solveDiagonal(TreeNode* root, int distance, map<int, vector<int> >& result) {
+    if (root == NULL)
+        return;
+    result[distance].push_back(root->data);
+    solveDiagonal(root->right, distance, result);
+    solveDiagonal(root->left, distance + 1, result);
+}
+void diagonal(TreeNode* root) {
+    map<int, vector<int> > result;
+    solveDiagonal(root, 0, result);
+    for (auto i : result) {
+        for (auto j : i.second) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+}
 
 int main() {
     TreeNode* root = buildTree();
+    diagonal(root);
     // vector <int> res = zigZagTraversal(root);
-    vector <int> res = leftViewTraversalUsingRecursion(root);
-    for (int i = 0; i < res.size(); i++) {
-        cout << res[i] << " ";
-    }
+    // vector <int> res = leftViewTraversalUsingRecursion(root);
+    // for (int i = 0; i < res.size(); i++) {
+    //     cout << res[i] << " ";
+    // }
     return 0;
 }
 
