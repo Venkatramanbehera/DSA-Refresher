@@ -5,6 +5,7 @@
     "__locale": "cpp",
     "random": "cpp",
     "valarray": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "queue": "cpp"
   }
 }
